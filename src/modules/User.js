@@ -1,35 +1,33 @@
 export function createUser(_name, _password) {
-  const user = {
+  return {
     name: _name,
     password: _password,
     description: '...',
     messages: [],
   };
 
-  return user
 }
 
 export async function createValidation(_user, _arrUsers) {
   const randomNumber = (_maxNum) => {
-    Math.floor(Math.random() * _maxNum)
+    return Math.floor(Math.random() * _maxNum)
   };
   const searchNumber = (_num) => {
     for (const val of _arrUsers) {
-      if (val.code === _num) {
+      if (val['code'] === _num) {
         return true;
       }
     }
     return false;
   }
 
-  let code_ = randomNumber(1000000000);
+  let code_ = randomNumber(2147483647);
   while (searchNumber(code_)) {
-    code_ = randomNumber(1000000000);
+    code_ = randomNumber(2147483647);
   }
 
-  const validUser = {
+  return {
     data: _user,
     code: code_,
-  }
-  return validUser;
+  };
 }
