@@ -50,7 +50,7 @@
     }
 
     async function log() {
-      if (!(userName.value === '' && userPassword.value === '')) {
+      if (!(userName.value === '' || userPassword.value === '')) {
         const data = {
           name: userName.value,
           password: userPassword.value,

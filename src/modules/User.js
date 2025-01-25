@@ -3,9 +3,35 @@ export function createUser(_name, _password) {
     name: _name,
     password: _password,
     description: '...',
-    messages: [],
+    friends: [],
   };
 
+}
+
+export function makePublicUser(_user) {
+  return {
+    name: _user['name'],
+    description: _user['description'],
+  }
+}
+export function makePrivateUser(_friend, _user) {
+  return {
+    name: _user['name'],
+    description: _user['description'],
+    messages: [],
+  }
+}
+
+export function addFriend(_user, _usrFriend) {
+  _user['friends'].push(_usrFriend);
+}
+
+export function updateFriend(_user, _newUsrData) {
+  for (const val of _user['friends']) {
+
+    val['messages']
+
+  }
 }
 
 export async function createValidation(_user, _arrUsers) {

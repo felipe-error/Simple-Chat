@@ -1,6 +1,7 @@
-function createMsg(_text) {
+function createMsg(_text, _target) {
   const msg = {
     date: new Date(),
+    target: _target,
     text: _text,
   };
 
